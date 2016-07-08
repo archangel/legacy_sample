@@ -1,0 +1,12 @@
+/*
+ * Archangel default frontend theme
+ *
+ *= require_self
+ *
+ *= require font-awesome
+ *= require animate
+ *
+ *= require archangel/common/application/core
+ *
+ *= require archangel/application/all
+ */

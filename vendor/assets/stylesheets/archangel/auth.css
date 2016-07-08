@@ -1,0 +1,12 @@
+/*
+ * Archangel default auth theme
+ *
+ *= require_self
+ *
+ *= require font-awesome
+ *= require animate
+ *
+ *= require archangel/common/auth/core
+ *
+ *= require archangel/auth/all
+ */
