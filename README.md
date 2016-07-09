@@ -1,24 +1,15 @@
-# README
+# Archangel Sample Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Demo application for the Archangel.
 
-Things you may want to cover:
+## Running Locally
 
-* Ruby version
+```
+bundle install
+bundle exec rails db:migrate
+bundle exec rails db:seed
+```
 
-* System dependencies
+## Deploying to Heroku
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/archangel/sample)
