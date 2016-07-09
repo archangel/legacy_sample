@@ -10,7 +10,7 @@
     "demo"
   ],
   "scripts": {
-		"postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed"
+		"postdeploy": "bundle exec rake db:migrate"
 	},
   "image": "heroku/ruby",
   "buildpacks": [{
