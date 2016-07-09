@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/archangel/archangel.git
-  revision: 46b1ff3ab05ce3108c2bd7d83e8eff7ee49b7bb2
+  revision: ccffd92e0c12e38f18142746bf90f9c6e76279e9
   specs:
     archangel (0.0.1)
       acts_as_list (~> 0.7)
