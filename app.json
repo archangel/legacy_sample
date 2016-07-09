@@ -20,6 +20,11 @@
     "heroku-postgresql"
   ],
   "env": {
+    "RAILS_ENV": "production",
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
     "ADMIN_NAME": {
       "description": "A user with this name will be created.",
       "value": "Admin User"
