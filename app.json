@@ -10,9 +10,8 @@
     "demo"
   ],
   "scripts": {
-		"postdeploy": "bundle exec rake db:migrate"
+		"postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed"
 	},
-  "image": "heroku/ruby",
   "buildpacks": [{
     "url": "https://github.com/heroku/heroku-buildpack-ruby"
   }],
@@ -35,11 +34,6 @@
     "ADMIN_PASWORD": {
       "description": "A user with this password will be created.",
       "value": "password123"
-    },
-    "SECRET_TOKEN": {
-      "description": "A secret key for verifying the integrity of signed cookies.",
-      "generator": "secret"
-    },
-    "RAILS_ENV": "production"
+    }
   }
 }
