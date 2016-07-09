@@ -1,0 +1,40 @@
+{
+  "name": "Archangel Sample Application",
+  "description": "Demo application for the Archangel.",
+  "website": "http://archangel.github.io/",
+  "repository": "https://github.com/archangel/sample",
+  "keywords": [
+    "archangel",
+    "ruby",
+    "rails",
+    "demo"
+  ],
+  "scripts": {
+		"postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed"
+	},
+  "image": "heroku/ruby",
+  "buildpacks": [{
+    "url": "https://github.com/heroku/heroku-buildpack-ruby"
+  }],
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "env": {
+    "ADMIN_NAME": {
+      "description": "A user with this name will be created.",
+      "value": "Admin User"
+    },
+    "ADMIN_USERNAME": {
+      "description": "A user with this username will be created.",
+      "value": "archangel"
+    },
+    "ADMIN_EMAIL": {
+      "description": "A user with this email will be created.",
+      "value": "admin@example.com"
+    },
+    "ADMIN_PASWORD": {
+      "description": "A user with this password will be created.",
+      "value": "password123"
+    }
+  }
+}
