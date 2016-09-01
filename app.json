@@ -37,8 +37,6 @@
     "ADMIN_PASWORD": {
       "description": "A user with this password will be created.",
       "value": "password123"
-    },
-    "EMAIL_DELIVERY_METHOD": "smtp",
-    "SMTP_SERVER": "smtp.sendgrid.net"
+    }
   }
 }
