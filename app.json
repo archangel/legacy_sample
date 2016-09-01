@@ -11,14 +11,15 @@
     "demo"
   ],
   "scripts": {
-		"postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed"
-	},
+    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed"
+  },
   "image": "heroku/ruby",
   "buildpacks": [{
     "url": "https://github.com/heroku/heroku-buildpack-ruby"
   }],
   "addons": [
-    "heroku-postgresql"
+    "heroku-postgresql",
+    "sendgrid:starter"
   ],
   "env": {
     "ADMIN_NAME": {
@@ -36,6 +37,8 @@
     "ADMIN_PASWORD": {
       "description": "A user with this password will be created.",
       "value": "password123"
-    }
+    },
+    "EMAIL_DELIVERY_METHOD": "smtp",
+    "SMTP_SERVER": "smtp.sendgrid.net"
   }
 }
