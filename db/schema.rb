@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160708040829) do
+ActiveRecord::Schema.define(version: 20161222025858) do
 
   create_table "archangel_assets", force: :cascade do |t|
     t.string   "title"
@@ -92,6 +92,28 @@ ActiveRecord::Schema.define(version: 20160708040829) do
     t.index ["published_at"], name: "index_archangel_pages_on_published_at"
     t.index ["slug"], name: "index_archangel_pages_on_slug"
     t.index ["title"], name: "index_archangel_pages_on_title"
+  end
+
+  create_table "archangel_posts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "path"
+    t.string   "slug"
+    t.integer  "author_id"
+    t.text     "content",          default: ""
+    t.string   "meta_keywords"
+    t.string   "meta_description"
+    t.string   "feature"
+    t.datetime "deleted_at"
+    t.datetime "published_at"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["author_id"], name: "index_archangel_posts_on_author_id"
+    t.index ["content"], name: "index_archangel_posts_on_content"
+    t.index ["deleted_at"], name: "index_archangel_posts_on_deleted_at"
+    t.index ["path"], name: "index_archangel_posts_on_path", unique: true
+    t.index ["published_at"], name: "index_archangel_posts_on_published_at"
+    t.index ["slug"], name: "index_archangel_posts_on_slug"
+    t.index ["title"], name: "index_archangel_posts_on_title"
   end
 
   create_table "archangel_sites", force: :cascade do |t|
