@@ -77,16 +77,18 @@ ActiveRecord::Schema.define(version: 20161222025858) do
     t.integer  "parent_id"
     t.string   "path"
     t.string   "slug"
+    t.boolean  "homepage",         default: false, null: false
     t.text     "content",          default: ""
     t.string   "meta_keywords"
     t.string   "meta_description"
     t.datetime "deleted_at"
     t.datetime "published_at"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.index ["author_id"], name: "index_archangel_pages_on_author_id"
     t.index ["content"], name: "index_archangel_pages_on_content"
     t.index ["deleted_at"], name: "index_archangel_pages_on_deleted_at"
+    t.index ["homepage"], name: "index_archangel_pages_on_homepage"
     t.index ["parent_id"], name: "index_archangel_pages_on_parent_id"
     t.index ["path"], name: "index_archangel_pages_on_path", unique: true
     t.index ["published_at"], name: "index_archangel_pages_on_published_at"
@@ -152,6 +154,7 @@ ActiveRecord::Schema.define(version: 20161222025858) do
   create_table "archangel_users", force: :cascade do |t|
     t.string   "name",                   default: "", null: false
     t.string   "username",               default: "", null: false
+    t.string   "role"
     t.string   "avatar"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -190,6 +193,7 @@ ActiveRecord::Schema.define(version: 20161222025858) do
     t.index ["invited_by_type", "invited_by_id"], name: "index_archangel_users_on_invited_by_type_and_invited_by_id"
     t.index ["name"], name: "index_archangel_users_on_name"
     t.index ["reset_password_token"], name: "index_archangel_users_on_reset_password_token", unique: true
+    t.index ["role"], name: "index_archangel_users_on_role"
     t.index ["unlock_token"], name: "index_archangel_users_on_unlock_token", unique: true
     t.index ["username"], name: "index_archangel_users_on_username", unique: true
   end
