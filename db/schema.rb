@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161222025858) do
+ActiveRecord::Schema.define(version: 20170205232506) do
 
   create_table "archangel_assets", force: :cascade do |t|
     t.string   "title"
@@ -69,6 +69,45 @@ ActiveRecord::Schema.define(version: 20161222025858) do
     t.index ["author_id"], name: "index_archangel_comments_on_author_id"
     t.index ["deleted_at"], name: "index_archangel_comments_on_deleted_at"
     t.index ["name"], name: "index_archangel_comments_on_name"
+  end
+
+  create_table "archangel_menu_items", force: :cascade do |t|
+    t.integer  "menu_id"
+    t.integer  "parent_id"
+    t.string   "label"
+    t.string   "attr_id"
+    t.string   "attr_class"
+    t.string   "link_attr_class"
+    t.string   "target"
+    t.string   "highlights_on"
+    t.string   "url"
+    t.integer  "menuable_id"
+    t.string   "menuable_type"
+    t.string   "method"
+    t.integer  "position"
+    t.datetime "deleted_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["deleted_at"], name: "index_archangel_menu_items_on_deleted_at"
+    t.index ["label"], name: "index_archangel_menu_items_on_label"
+    t.index ["menu_id"], name: "index_archangel_menu_items_on_menu_id"
+    t.index ["menuable_id"], name: "index_archangel_menu_items_on_menuable_id"
+    t.index ["menuable_type"], name: "index_archangel_menu_items_on_menuable_type"
+    t.index ["parent_id"], name: "index_archangel_menu_items_on_parent_id"
+  end
+
+  create_table "archangel_menus", force: :cascade do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.string   "attr_id"
+    t.string   "attr_class"
+    t.string   "selected_class", default: "selected"
+    t.datetime "deleted_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["deleted_at"], name: "index_archangel_menus_on_deleted_at"
+    t.index ["name"], name: "index_archangel_menus_on_name"
+    t.index ["slug"], name: "index_archangel_menus_on_slug", unique: true
   end
 
   create_table "archangel_pages", force: :cascade do |t|
