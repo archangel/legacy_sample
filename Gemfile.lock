@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/archangel/archangel.git
-  revision: 3d485243434ec984539846e36ae7cb2e2d1e6784
+  revision: 6fd448e17f1abafbf29e975f1f5f3d88bdb27c04
   specs:
     archangel (0.0.1)
       active_link_to (~> 1.0.4)

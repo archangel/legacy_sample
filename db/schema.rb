@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603231755) do
+ActiveRecord::Schema.define(version: 20170604013568) do
 
   create_table "archangel_assets", force: :cascade do |t|
     t.string "title"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20170603231755) do
     t.integer "parent_id"
     t.string "path"
     t.string "slug"
-    t.boolean "homepage", default: false, null: false
+    t.boolean "homepage", default: false
     t.text "content", default: ""
     t.string "meta_keywords"
     t.string "meta_description"
